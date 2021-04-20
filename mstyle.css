@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+.flexi {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexit {
+    width: 150px;
+    margin: 10px;
+    border: 3px solid black;
+    background-color: black;
+}
+
+.flexi1 {
+    min-height: 200px;
+}
+
+.flexi2 {
+
+    min-height: 200px;
+}
+
+.flexi3 {
+    min-height: 300px;
+}

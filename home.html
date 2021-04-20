@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SrijaFlix</title>
+    <link rel="stylesheet" href="slideshow.css" />
+</head>
+
+<body>
+    <nav>
+        <ul class="n1">
+            <li class="logotext"><img src="images/srijaflix1.jpg" width="200"></li>
+            <li>
+                <ul class="n1">
+                    <li><a href="home.html" class="nav-link">HOME</a></li>
+                    <li><a href="movies.html" class="nav-link">MOVIES</a></li>
+                    <li><a href="tvseries.html" class="nav-link">TV SERIES</a></li>
+                    <li><a href="anime.html" class="nav-link">ANIME</a></li>
+                    <li><a href="dramas.html" class="nav-link link-button">DRAMAS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- slide show  -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="images/ngk.jpg" style="width:100%">
+            <div class="text">Nandha Gopalan Kumaran</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/joker.jpg" style="width:100%">
+            <div class="text">JOKER</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/startup.jpg" style="width:100%">
+            <div class="text">START-UP</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
